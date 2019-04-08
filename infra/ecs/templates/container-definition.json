@@ -1,0 +1,20 @@
+[
+  {
+    "name": "instance",
+    "image": "${app_docker_image}",
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 3000
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_name}",
+        "awslogs-region": "${log_region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]
